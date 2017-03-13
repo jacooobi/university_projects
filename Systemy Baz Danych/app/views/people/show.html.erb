@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @person.id %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @person.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @person.last_name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @person.age %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @person.gender %>
+</p>
+
+<% if @person.tickets.count > 0 %>
+  <h2>Tickets</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Valid from</th>
+        <th>Valid to</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @person.tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.price %></td>
+          <td><%= ticket.category %></td>
+          <td><%= ticket.valid_from %></td>
+          <td><%= ticket.valid_to %></td>
+          <td><%= link_to 'Show', ticket %></td>
+          <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+          <td><%= link_to 'Delete', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+<% end %>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'List users', people_path %> |
+<%= link_to 'Home Page', root_path %>

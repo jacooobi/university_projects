@@ -1,0 +1,87 @@
+#!/usr/bin/env ruby
+
+require_relative 'lib/shared'
+require_relative 'lib/counting_sort'
+require_relative 'lib/merge_sort'
+require_relative 'lib/quick_sort'
+require_relative 'lib/shell_sort'
+require_relative 'lib/selection_sort'
+
+# Test data
+
+sorted_array = rand_array(1000, 10000).sort!
+reversed_array = rand_array(1000, 10000).sort!.reverse
+random_array = rand_array(15, 10000)
+
+tests = {
+  "sorted" => sorted_array,
+  "reversed" => reversed_array,
+  "random" => random_array
+}
+
+# Tests
+
+puts "----- Merge Sort -----"
+
+tests.each do |name, test|
+  puts "\nInput data: [#{test.join(", ")}]\n" if test.size < 15
+
+  benchmark_sorting("Merge sort (#{name})") {merge_sort(test)}
+
+  puts "\nOutput data: [#{merge_sort(test).join(", ")}]\n" if test.size < 15
+end
+
+puts "----- Counting sort (asc) -----"
+
+tests.each do |name, test|
+  puts "\nInput data: [#{test.join(", ")}]\n" if test.size < 15
+
+  benchmark_sorting("Counting sort (asc) (#{name})") {counting_sort_asc(test)}
+
+  puts "\nAuxiliary array (before): [#{get_first_counts_array(test).join(", ")}]" if test.size < 15
+  puts "Auxiliary array (after): [#{get_counts_array(test).join(", ")}]" if test.size < 15
+  puts "Output data: [#{counting_sort_asc(test).join(", ")}]\n" if test.size < 15
+end
+
+puts "----- Counting sort (desc) -----"
+
+tests.each do |name, test|
+  puts "\nInput data: [#{test.join(", ")}]\n" if test.size < 15
+
+  benchmark_sorting("Counting sort (desc) (#{name})") {counting_sort_desc(test)}
+
+  puts "\nAuxiliary array (before): [#{get_first_counts_array(test).join(", ")}]" if test.size < 15
+  puts "Auxiliary array: [#{get_counts_array(test).join(", ")}]" if test.size < 15
+  puts "Output data: [#{counting_sort_desc(test).join(", ")}]\n" if test.size < 15
+end
+
+puts "----- Selection Sort -----"
+
+tests.each do |name, test|
+  puts "\nInput data: [#{test.join(", ")}]\n" if test.size < 15
+
+  benchmark_sorting("Selection sort (#{name})") {selection_sort(test)}
+
+  puts "Output data: [#{selection_sort(test).join(", ")}]\n" if test.size < 15
+end
+
+puts "----- Shell Sort -----"
+
+tests.each do |name, test|
+  puts "\nInput data: [#{test.join(", ")}]\n" if test.size < 15
+
+  benchmark_sorting("Shell sort (#{name})") {shell_sort(test)}
+
+  puts "Output data: [#{shell_sort(test).join(", ")}]\n" if test.size < 15
+end
+
+puts "----- Quick Sort -----"
+
+tests.each do |name, test|
+  puts "\nInput data: [#{test.join(", ")}]\n" if test.size < 15
+
+  benchmark_sorting("Quick sort (#{name})") {quick_sort(test)}
+
+  puts "Output data: [#{quick_sort(test).join(", ")}]\n" if test.size < 15
+end
+

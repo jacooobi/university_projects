@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @band.name %>
+</p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @band.id %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @band.genre %>
+</p>
+
+<p>
+  <strong>Formed on:</strong>
+  <%= @band.formed_on %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @band.country %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @band.about %>
+</p>
+
+<% if @band.concerts.count > 0 %>
+  <h2>Concerts</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @band.concerts.each do |concert| %>
+        <tr>
+          <td><%= concert.id %></td>
+          <td><%= concert.name %></td>
+          <td><%= concert.date %></td>
+          <td><%= link_to 'Show', concert %></td>
+          <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
+          <td><%= link_to 'Delete', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= link_to 'Edit', edit_band_path(@band) %> |
+<%= link_to 'List bands', bands_path %> |
+<%= link_to 'Home Page', root_path %>

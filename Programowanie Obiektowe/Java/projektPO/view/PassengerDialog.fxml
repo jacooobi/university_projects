@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="322.0" prefWidth="484.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projektPO.view.PassengerDialogController">
+   <children>
+      <Label fx:id="passengerLabel" layoutX="101.0" layoutY="50.0" minWidth="200.0" prefHeight="25.0" prefWidth="200.0" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="207.0" text="Plan podróży powrotnej:" />
+      <Label layoutX="31.0" layoutY="187.0" text="Plan podróży:" />
+      <Label layoutX="31.0" layoutY="167.0" text="Wiek:" />
+      <Label layoutX="31.0" layoutY="107.0" text="Imię:" />
+      <Label layoutX="31.0" layoutY="127.0" text="Nazwisko:" />
+      <Label layoutX="31.0" layoutY="147.0" text="PESEL:" />
+      <Label fx:id="firstNamePassengerLabel" layoutX="71.0" layoutY="107.0" minWidth="200.0" />
+      <Label fx:id="lastNamePassengerLabel" layoutX="101.0" layoutY="127.0" minWidth="200.0" />
+      <Label fx:id="PESELPassengerLabel" layoutX="81.0" layoutY="147.0" minWidth="200.0" />
+      <Label fx:id="agePassengerLabel" layoutX="71.0" layoutY="167.0" minWidth="200.0" />
+      <Label fx:id="tripPassengerLabel" layoutX="121.0" layoutY="187.0" minWidth="200.0" />
+      <Label fx:id="returnTripPassengerLabel" layoutX="181.0" layoutY="207.0" minWidth="150.0" />
+   </children>
+</Pane>

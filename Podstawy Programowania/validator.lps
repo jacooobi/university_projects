@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="validator.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="validator"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="21"/>
+        <CursorPos X="15" Y="30"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="20" HistoryIndex="19">
+      <Position1>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="17" Column="52" TopLine="1"/>
+      </Position1>
+      <Position2>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="9" Column="71" TopLine="1"/>
+      </Position2>
+      <Position3>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="6" Column="20" TopLine="1"/>
+      </Position3>
+      <Position4>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="9" Column="61" TopLine="1"/>
+      </Position4>
+      <Position5>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="39" Column="33" TopLine="26"/>
+      </Position5>
+      <Position6>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="8" Column="3" TopLine="1"/>
+      </Position6>
+      <Position7>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="6" Column="29" TopLine="1"/>
+      </Position7>
+      <Position8>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="38" Column="49" TopLine="28"/>
+      </Position8>
+      <Position9>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="46" Column="1" TopLine="28"/>
+      </Position9>
+      <Position10>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="37" Column="354" TopLine="27"/>
+      </Position10>
+      <Position11>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="13" Column="20" TopLine="7"/>
+      </Position11>
+      <Position12>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="12" Column="117" TopLine="2"/>
+      </Position12>
+      <Position13>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="21" Column="20" TopLine="2"/>
+      </Position13>
+      <Position14>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="16" Column="5" TopLine="6"/>
+      </Position14>
+      <Position15>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="14" Column="56" TopLine="7"/>
+      </Position15>
+      <Position16>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="25" Column="18" TopLine="16"/>
+      </Position16>
+      <Position17>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="26" Column="3" TopLine="16"/>
+      </Position17>
+      <Position18>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="25" Column="47" TopLine="16"/>
+      </Position18>
+      <Position19>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="18" Column="3" TopLine="10"/>
+      </Position19>
+      <Position20>
+        <Filename Value="validator.lpr"/>
+        <Caret Line="31" Column="21" TopLine="17"/>
+      </Position20>
+    </JumpHistory>
+  </ProjectSession>
+  <EditorMacros Count="0"/>
+</CONFIG>

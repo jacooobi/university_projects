@@ -1,0 +1,36 @@
+<%= form_for(@band) do |f| %>
+  <% if @band.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@band.errors.count, "error") %> prohibited this band from being saved:</h2>
+
+      <ul>
+      <% @band.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :genre %><br>
+    <%= f.text_field :genre %>
+  </div>
+  <div class="field">
+    <%= f.label :formed_on %><br>
+    <%= f.select :formed_on, Array(1900..2017).reverse.collect { |a| [a.to_s, a] }, { include_blank: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.select :country, ISO3166::Country.translations("PL").each.select { |k,v| v }.map { |a| [a[1], a[1]] }.sort, { include_blank: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :about %><br>
+    <%= f.text_area :about %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require_relative 'lib/shared'
+require_relative 'lib/counting_sort'
+require_relative 'lib/merge_sort'
+require_relative 'lib/selection_sort'
+require_relative 'lib/shell_sort'
+require_relative 'lib/quick_sort'
+
+count = 1000000
+
+test_arr = generate_numbers(count)
+
+puts "--- Benchmarking for #{count} elements ---"
+
+benchmark_sorting("Merge sort") { merge_sort(test_arr) }
+benchmark_sorting("Counting asc sort") { counting_sort_asc(test_arr) }
+benchmark_sorting("Counting desc sort") { counting_sort_desc(test_arr) }
+benchmark_sorting("Selection sort") { selection_sort(test_arr) }
+benchmark_sorting("Shell sort") { shell_sort(test_arr) }
+benchmark_sorting("Quick sort") { quick_sort(test_arr) }

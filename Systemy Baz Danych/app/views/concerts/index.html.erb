@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Concerts</h1>
+
+<%= form_tag concerts_path, method: :get do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag 'Search', class: "button" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Id', concerts_path(order: 'id') %></th>
+      <th><%= link_to 'Name', concerts_path(order: 'name') %></th>
+      <th><%= link_to 'Date', concerts_path(order: 'date') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @concerts.each do |concert| %>
+      <tr>
+        <td><%= concert.id %></td>
+        <td><%= concert.name %></td>
+        <td><%= concert.date %></td>
+        <td><%= link_to 'Show', concert %></td>
+        <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
+        <td><%= link_to 'Delete', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add new concert', new_concert_path %>
+<%= link_to 'Home Page', root_url %>

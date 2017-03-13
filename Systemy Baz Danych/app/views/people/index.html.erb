@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<%= form_tag people_path, method: :get do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag 'Search', class: "button" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Id', people_path(order: 'id') %></th>
+      <th><%= link_to 'First name', people_path(order: 'first_name') %></th>
+      <th><%= link_to 'Last name', people_path(order: 'last_name') %></th>
+      <th><%= link_to 'Age', people_path(order: 'age') %></th>
+      <th><%= link_to 'Gender', people_path(order: 'gender') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.id %></td>
+        <td><%= person.first_name %></td>
+        <td><%= person.last_name %></td>
+        <td><%= person.age %></td>
+        <td><%= person.gender %></td>
+        <td><%= link_to 'Show', person %></td>
+        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+        <td><%= link_to 'Delete', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add new user', new_person_path %>
+<%= link_to 'Home Page', root_url %>

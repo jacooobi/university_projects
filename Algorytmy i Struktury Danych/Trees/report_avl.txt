@@ -1,0 +1,161 @@
+========================================================
+1st iteration
+========================================================
+
+Sample size - 5000
+Stworzenie struktury: 6970.34
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   1.2
+
+Sample size - 10000
+Stworzenie struktury: 28544.94
+Wyszukanie minimum:   0.01
+Wypisanie in-order:   3.83
+
+Sample size - 15000
+Stworzenie struktury: 69139.1
+Wyszukanie minimum:   0.01
+Wypisanie in-order:   10.68
+
+Sample size - 20000
+Stworzenie struktury: 127671.17
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   10.69
+
+Sample size - 25000
+Stworzenie struktury: 201621.19
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   10.8
+
+Sample size - 30000
+Stworzenie struktury: 284200.96
+Wyszukanie minimum:   0.06
+Wypisanie in-order:   9.54
+
+Sample size - 35000
+Stworzenie struktury: 439884.17
+Wyszukanie minimum:   0.04
+Wypisanie in-order:   11.45
+
+Sample size - 40000
+Stworzenie struktury: 529875.93
+Wyszukanie minimum:   0.07
+Wypisanie in-order:   14.57
+
+Sample size - 45000
+Stworzenie struktury: 561234.67
+Wyszukanie minimum:   0.04
+Wypisanie in-order:   12.35
+
+Sample size - 50000
+Stworzenie struktury: 710860.9
+Wyszukanie minimum:   0.05
+Wypisanie in-order:   14.1
+
+========================================================
+2nd iteration
+========================================================
+
+Sample size - 5000
+Stworzenie struktury: 6723.1
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   1.55
+
+Sample size - 10000
+Stworzenie struktury: 26901.47
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   2.33
+
+Sample size - 15000
+Stworzenie struktury: 59957.95
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   4.72
+
+Sample size - 20000
+Stworzenie struktury: 108045.94
+Wyszukanie minimum:   0.01
+Wypisanie in-order:   6.7
+
+Sample size - 25000
+Stworzenie struktury: 172232.48
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   7.67
+
+Sample size - 30000
+Stworzenie struktury: 269379.36
+Wyszukanie minimum:   0.05
+Wypisanie in-order:   8.61
+
+Sample size - 35000
+Stworzenie struktury: 359033.49
+Wyszukanie minimum:   0.01
+Wypisanie in-order:   15.39
+
+Sample size - 40000
+Stworzenie struktury: 605870.79
+Wyszukanie minimum:   0.05
+Wypisanie in-order:   20.93
+
+Sample size - 45000
+Stworzenie struktury: 719358.49
+Wyszukanie minimum:   0.02
+Wypisanie in-order:   17.17
+
+Sample size - 50000
+Stworzenie struktury: 820443.99
+Wyszukanie minimum:   0.03
+Wypisanie in-order:   13.81
+
+========================================================
+3rd iteration
+========================================================
+
+Sample size - 5000
+Stworzenie struktury: 6903.43
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   1.18
+
+Sample size - 10000
+Stworzenie struktury: 27053.03
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   4.86
+
+Sample size - 15000
+Stworzenie struktury: 60861.76
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   3.64
+
+Sample size - 20000
+Stworzenie struktury: 109024.58
+Wyszukanie minimum:   0.01
+Wypisanie in-order:   8.78
+
+Sample size - 25000
+Stworzenie struktury: 175563.78
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   7.65
+
+Sample size - 30000
+Stworzenie struktury: 248372.69
+Wyszukanie minimum:   0.01
+Wypisanie in-order:   10.86
+
+Sample size - 35000
+Stworzenie struktury: 329559.87
+Wyszukanie minimum:   0.0
+Wypisanie in-order:   13.46
+
+Sample size - 40000
+Stworzenie struktury: 457017.38
+Wyszukanie minimum:   0.01
+Wypisanie in-order:   16.44
+
+Sample size - 45000
+Stworzenie struktury: 587535.79
+Wyszukanie minimum:   0.01
+Wypisanie in-order:   15.33
+
+Sample size - 50000
+Stworzenie struktury: 731980.77
+Wyszukanie minimum:   0.01
+Wypisanie in-order:   18.16

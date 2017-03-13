@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import matplotlib.pyplot as plt
+import csv
+import scipy
+import numpy as np
+
+data = [
+  {'file': 'rsel.csv', 'label': '1-Evol-RS', 'color': 'blue', 'marker': 'o'},
+  {'file': 'cel-rs.csv', 'label': '1-Coev-RS', 'color': 'green', 'marker': 'v'},
+  {'file': '2cel-rs.csv', 'label': '2-Coev-RS', 'color': 'red', 'marker': 'D'},
+  {'file': 'cel.csv', 'label': '1-Coev', 'color': 'black', 'marker': 's'},
+  {'file': '2cel.csv', 'label': '2-Coev', 'color': 'magenta', 'marker': 'd'}
+]
+
+class Reader:
+
+  def __init__(self, filename):
+    self.filename = filename
+
+  def construct_plot_data(self):
+    x, y = self.__fetch()
+    return [np.array(x) / 1000, np.array(map(scipy.mean, y)) * 100]
+
+  def construct_bartplot_data(self):
+    _, y = self.__fetch()
+    return np.array(map(scipy.mean, y)) * 100
+
+  def __fetch(self):
+    with open(self.filename, 'rb') as f:
+      x, y = [], []
+      reader = csv.reader(f)
+      next(reader, None)
+      for row in reader:
+        x.append(int(row[1]))
+        y.append(map(float, row[2:]))
+
+    return [x, y]
+
+
+def main():
+  plt.figure(figsize=(6.7, 5))
+  legend = []
+
+  ax1 = plt.subplot(121)
+  ax1.set_xlim([0, 500])
+  plt.title('Pokolenie')
+  plt.xlabel('Rozegranych gier (x1000)')
+  plt.ylabel('Odsetek wygranych gier [%]')
+
+  for el in data:
+    x, y = Reader(el['file']).construct_plot_data()
+    line, = plt.plot(x, y, label=el['label'], color=el['color'], marker=el['marker'], markevery=np.arange(0, 200, 200/8))
+    legend.append(line)
+
+  plt.yticks(np.arange(60, 105, 5))
+  plt.xticks(np.arange(0, 600, 100))
+  plt.grid(True)
+  plt.legend(handles=legend, loc=4, prop={'size':8})
+
+  ax2 = plt.subplot(122)
+  box_plot_data = []
+  for el in data:
+    fetched_data = Reader(el['file']).construct_bartplot_data()
+    box_plot_data.append(fetched_data)
+
+  plt.boxplot(box_plot_data, notch=1)
+  plt.grid(True)
+  plt.xticks(np.arange(6), ['','1-Evol-RS', '1-Coev-RS', '2-Coev-RS', '1-Coev', '2-Coev'], rotation=20)
+  plt.yticks(np.arange(60, 105, 5))
+  ax2.yaxis.tick_right()
+  plt.savefig('kck_jacek_kubiak_116307.pdf')
+  plt.close()
+
+if __name__ == '__main__':
+  main()
+

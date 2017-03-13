@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @ticket.id %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @ticket.price %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @ticket.category %>
+</p>
+
+<p>
+  <strong>Valid from:</strong>
+  <%= @ticket.valid_from %>
+</p>
+
+<p>
+  <strong>Valid to:</strong>
+  <%= @ticket.valid_to %>
+</p>
+
+<p>
+  <strong>person_id:</strong>
+  <%= @ticket.person_id %>
+</p>
+
+<p>
+  <strong>festival_id:</strong>
+  <%= @ticket.festival_id %>
+</p>
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'List tickets', tickets_path %> |
+<%= link_to 'Home Page', root_path %>

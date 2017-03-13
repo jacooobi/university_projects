@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tickets</h1>
+
+<%= form_tag tickets_path, method: :get do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag 'Search', class: "button" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Id', tickets_path(order: 'id') %></th>
+      <th><%= link_to 'Price', tickets_path(order: 'price') %></th>
+      <th><%= link_to 'Category', tickets_path(order: 'category') %></th>
+      <th><%= link_to 'Valid from', tickets_path(order: 'valid_from') %></th>
+      <th><%= link_to 'Valid to', tickets_path(order: 'valid_to') %></th>
+      <th><%= link_to 'Person_id', tickets_path(order: 'person_id') %></th>
+      <th><%= link_to 'Festival_id', tickets_path(order: 'festival_id') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.id %></td>
+        <td><%= ticket.price %></td>
+        <td><%= ticket.category %></td>
+        <td><%= ticket.valid_from %></td>
+        <td><%= ticket.valid_to %></td>
+        <td><%= ticket.person_id %></td>
+        <td><%= ticket.festival_id %></td>
+        <td><%= link_to 'Show', ticket %></td>
+        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+        <td><%= link_to 'Delete', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add new ticket', new_ticket_path %>
+<%= link_to 'Home Page', root_path %>

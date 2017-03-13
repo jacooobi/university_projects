@@ -1,0 +1,42 @@
+<%= form_for(@ticket) do |f| %>
+  <% if @ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+      <% @ticket.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.select :category, [['przedsprzedaz', 'przedsprzedaz'], ['normalny', 'normalny']], { include_blank: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :valid_from %><br>
+    <%= f.date_select :valid_from, { include_blank: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :valid_to %><br>
+    <%= f.date_select :valid_to, { include_blank: true } %>
+  </div>
+  <div class="field">
+    <%= f.label :festival_id %><br>
+    <%= f.select :festival_id, Festival.all.collect { |f| [f.name, f.id] }, { include_blank: true }  %>
+  </div>
+  <div class="field">
+    <%= f.label :person_id %><br>
+    <%= f.select :person_id, Person.all.collect { |f| [f.full_name, f.id] }, { include_blank: true } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

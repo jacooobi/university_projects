@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bands</h1>
+
+<%= form_tag bands_path, method: :get do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag 'Search', class: "button" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Id', bands_path(order: 'id') %></th>
+      <th><%= link_to 'Name', bands_path(order: 'name') %></th>
+      <th><%= link_to 'Genre', bands_path(order: 'genre') %></th>
+      <th><%= link_to 'Formed on', bands_path(order: 'formed_on') %></th>
+      <th><%= link_to 'Country', bands_path(order: 'country') %></th>
+      <th><%= link_to 'About', bands_path(order: 'about') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bands.each do |band| %>
+      <tr>
+        <td><%= band.id %></td>
+        <td><%= band.name %></td>
+        <td><%= band.genre %></td>
+        <td><%= band.formed_on %></td>
+        <td><%= band.country %></td>
+        <td><%= band.about %></td>
+        <td><%= link_to 'Show', band %></td>
+        <td><%= link_to 'Edit', edit_band_path(band) %></td>
+        <td><%= link_to 'Delete', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New band', new_band_path %>
+<%= link_to 'Home Page', root_url %>

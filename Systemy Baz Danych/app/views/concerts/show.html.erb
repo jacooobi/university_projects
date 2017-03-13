@@ -1,0 +1,123 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @concert.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @concert.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @concert.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_concert_path(@concert) %> |
+<%= link_to 'List concerts', concerts_path %> |
+<%= link_to 'Home Page', root_path %>
+
+<% if @band %>
+  <h2>Band</h2>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @band.name %>
+  </p>
+
+  <p>
+    <strong>Genre:</strong>
+    <%= @band.genre %>
+  </p>
+
+  <p>
+    <strong>Formed on:</strong>
+    <%= @band.formed_on %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= @band.country %>
+  </p>
+
+  <p>
+    <strong>About:</strong>
+    <%= @band.about %>
+  </p>
+
+  <%= link_to 'Edit', edit_band_path(@band) %> |
+  <%= link_to 'List bands', bands_path %>
+<% end %>
+
+<% if @location %>
+  <h2>Location</h2>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @location.name %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= @location.address %>
+  </p>
+
+  <p>
+    <strong>Opened at:</strong>
+    <%= @location.opened_at %>
+  </p>
+
+  <p>
+    <strong>Closed at:</strong>
+    <%= @location.closed_at %>
+  </p>
+
+  <p>
+    <strong>Capacity:</strong>
+    <%= @location.capacity %>
+  </p>
+
+  <p>
+    <strong>Phone number:</strong>
+    <%= @location.phone_number %>
+  </p>
+
+  <p>
+    <strong>Website:</strong>
+    <%= @location.website %>
+  </p>
+
+  <%= link_to 'Edit', edit_location_path(@location) %> |
+  <%= link_to 'List locations', locations_path %>
+<% end %>
+
+<% if @festival %>
+
+  <h2>Festival</h2>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @festival.name %>
+  </p>
+
+  <p>
+    <strong>Edition:</strong>
+    <%= @festival.edition %>
+  </p>
+
+  <p>
+    <strong>Start date:</strong>
+    <%= @festival.start_date %>
+  </p>
+
+  <p>
+    <strong>End date:</strong>
+    <%= @festival.end_date %>
+  </p>
+
+  <%= link_to 'Edit', edit_festival_path(@festival) %> |
+  <%= link_to 'List festivals', festivals_path %>
+<% end %>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projektPO.view.RootLayoutController">
+   <right>
+      <TabPane prefHeight="900.0" prefWidth="281.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Panel Kontrolny">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="195.0">
+                     <children>
+                        <Button fx:id="createVehicleButton" layoutX="28.0" layoutY="82.0" mnemonicParsing="false" onMouseClicked="#handleMYButtonClicked" prefHeight="27.0" prefWidth="203.0" text="Dodaj pojazd" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="82.0" />
+                        <Label layoutX="53.0" layoutY="14.0" text="Wybierz typ pojazdu" textAlignment="CENTER" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="optionsBox" layoutX="28.0" layoutY="44.0" prefHeight="27.0" prefWidth="202.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                        <StackPane layoutX="1.0" layoutY="197.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="370.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="170.0">
+                           <children>
+                              <AnchorPane fx:id="shipsPane" prefHeight="222.0" prefWidth="260.0">
+                                 <children>
+                                    <Button layoutX="5.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#changeShipRoute" text="Zmień trasę" />
+                                    <Button layoutX="100.0" layoutY="220.0" mnemonicParsing="false" onMouseClicked="#removeShipButtonClicked" text="Usuń" />
+                                    <Label fx:id="shipArmatureType" layoutY="160.0" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label layoutX="15.0" layoutY="14.0" prefHeight="18.0" prefWidth="77.0" text="Wybrano:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font></Label>
+                                    <Label layoutX="5.0" layoutY="40.0" text="Aktualne położenie:" />
+                                    <Label layoutX="5.0" layoutY="80.0" text="Maksymalna prędkość:" />
+                                    <Label layoutX="5.0" layoutY="100.0" text="Maksymalna pojemność:" />
+                                    <Label layoutX="5.0" layoutY="60.0" text="Firma:" />
+                                    <Label layoutX="5.0" layoutY="120.0" text="Identyfikator:" />
+                                    <Label layoutX="5.0" layoutY="140.0" text="Liczba pasażerów:" />
+                                    <Label layoutX="5.0" layoutY="160.0" text="Typ uzbrojenia:" />
+                                    <Label fx:id="shipSelectedLabel" layoutX="90.0" layoutY="14.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="shipLocationLabel" layoutX="135.0" layoutY="40.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="shipCompanyLabel" layoutY="60.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="shipMaxSpeedLabel" layoutY="80.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="shipCapacityLabel" layoutY="100.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="shipIdLabel" layoutY="120.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="shipPassengersLabel" layoutY="140.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label layoutX="5.0" layoutY="185.0" text="Pasażerowie:" />
+                                    <ComboBox fx:id="shipPassengersBox" layoutX="5.0" layoutY="180.0" prefWidth="150.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="5.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="planesPane" opacity="0.0" prefHeight="330.0" prefWidth="281.0">
+                                 <children>
+                                    <Label layoutX="15.0" layoutY="14.0" text="Wybrano:">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="5.0" layoutY="40.0" text="Maksymalna pojemność:" />
+                                    <Label layoutX="5.0" layoutY="60.0" text="Liczba pasażerów:" />
+                                    <Label layoutX="5.0" layoutY="80.0" text="Liczba personelu:" />
+                                    <Label layoutX="5.0" layoutY="100.0" text="Stan paliwa:" />
+                                    <Label layoutX="5.0" layoutY="120.0" text="Trasa:" />
+                                    <Label layoutX="5.0" layoutY="140.0" text="Aktualne położenie:" />
+                                    <Label layoutX="5.0" layoutY="160.0" text="Następne lądowanie:" />
+                                    <Label layoutX="5.0" layoutY="180.0" text="Identyfikator:" />
+                                    <Label layoutX="5.0" layoutY="200.0" text="Maksymalna prędkość:" />
+                                    <Label layoutX="5.0" layoutY="220.0" text="Typ uzbrojenia:" />
+                                    <Button layoutX="5.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#changePlaneRoute" text="Zmień trasę" AnchorPane.leftAnchor="5.0" />
+                                    <Button layoutX="102.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#emergencyLanding" text="Ląduj awaryjnie" />
+                                    <Button fx:id="removePlaneButton" layoutX="220.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#removePlaneButtonClicked" text="Usuń" />
+                                    <Label fx:id="planeCapacityLabel" layoutX="169.0" layoutY="40.0" AnchorPane.leftAnchor="160.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="planePassengersLabel" layoutX="152.0" layoutY="60.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="planePersonelLabel" layoutX="142.0" layoutY="80.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="planeFuelLabel" layoutX="85.0" layoutY="100.0" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="planePlanLabel" layoutX="63.0" layoutY="120.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="planeLocationLabel" layoutX="142.0" layoutY="140.0" AnchorPane.leftAnchor="130.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="planeNextStopLabel" layoutX="159.0" layoutY="160.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="planeIdLabel" layoutX="116.0" layoutY="180.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="planeMaxSpeedLabel" layoutX="169.0" layoutY="200.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="planeArmatureType" layoutX="109.0" layoutY="220.0" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label fx:id="planeSelectedLabel" layoutX="123.0" layoutY="15.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label layoutX="5.0" layoutY="245.0" text="Lista Pasażerów" />
+                                    <ComboBox fx:id="passengersBox" layoutX="125.0" layoutY="240.0" prefWidth="150.0" AnchorPane.leftAnchor="110.0" AnchorPane.rightAnchor="11.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="locationsPane" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="15.0" text="Wybrano:" wrapText="true">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="locationSelectedLabel" layoutX="14.0" layoutY="15.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label layoutX="5.0" layoutY="40.0" text="Położenie:" />
+                                    <Label fx:id="locationLocationLabel" layoutY="40.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label layoutX="5.0" layoutY="60.0" text="Pojemność:" />
+                                    <Label fx:id="locationCapacityLabel" layoutY="60.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="20.0" />
+                                    <Label layoutX="5.0" layoutY="80.0" text="Pasażerowie:" />
+                                    <ComboBox fx:id="locationPassengersBox" layoutX="5.0" layoutY="75.0" prefWidth="150.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="5.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </StackPane>
+                      <Button fx:id="serializeButton" layoutX="17.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#serializeButtonClicked" text="Zapisz symulację" AnchorPane.leftAnchor="10.0" />
+                        <Button fx:id="deserializeButton" layoutX="148.0" layoutY="135.0" mnemonicParsing="false" onMouseClicked="#deserializeButtonClicked" text="Załaduj symalację" AnchorPane.rightAnchor="10.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </right>
+   <center>
+      <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="rootCanvas" height="901.0" width="1141.0">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin></Canvas>
+            <Canvas fx:id="secondLayerCanvas" height="901.0" width="1141.0" />
+            <Canvas fx:id="thirdLayerCanvas" height="901.0" width="1141.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </StackPane>
+   </center>
+</BorderPane>

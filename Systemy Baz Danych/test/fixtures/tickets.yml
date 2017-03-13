@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1
+  type: 
+  valid_from: 2017-01-25
+  valid_to: 2017-01-25
+
+two:
+  price: 1
+  type: 
+  valid_from: 2017-01-25
+  valid_to: 2017-01-25

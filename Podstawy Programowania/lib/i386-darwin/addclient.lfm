@@ -1,0 +1,77 @@
+object AddForm: TAddForm
+  Left = 983
+  Height = 266
+  Top = 153
+  Width = 222
+  ClientHeight = 266
+  ClientWidth = 222
+  LCLVersion = '1.2.4.0'
+  object Nickname: TEdit
+    Left = 16
+    Height = 22
+    Top = 40
+    Width = 192
+    TabOrder = 0
+    Text = 'Podaj nazwe zespolu'
+  end
+  object Date: TEdit
+    Left = 16
+    Height = 22
+    Top = 72
+    Width = 192
+    TabOrder = 1
+    Text = 'Podaj date koncertu'
+  end
+  object City: TEdit
+    Left = 16
+    Height = 22
+    Top = 104
+    Width = 192
+    TabOrder = 2
+    Text = 'Miejscowosc'
+  end
+  object TicketPrice: TEdit
+    Left = 16
+    Height = 22
+    Top = 136
+    Width = 192
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+    Text = 'Cena biletu'
+  end
+  object TicketsSold: TEdit
+    Left = 16
+    Height = 22
+    Top = 168
+    Width = 192
+    TabOrder = 4
+    Text = 'Sprzedane biletu'
+  end
+  object TitleLabel: TLabel
+    Left = 48
+    Height = 16
+    Top = 16
+    Width = 126
+    Caption = 'Dodaj nowy koncert'
+    ParentColor = False
+  end
+  object Button1: TButton
+    Left = 72
+    Height = 25
+    Top = 232
+    Width = 75
+    Caption = 'Dodaj'
+    OnClick = Button1Click
+    TabOrder = 6
+  end
+  object TotalExpenses: TEdit
+    Left = 16
+    Height = 22
+    Top = 200
+    Width = 192
+    HideSelection = False
+    TabOrder = 5
+    Text = 'Wydatki'
+  end
+end

@@ -1,0 +1,97 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @festival.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @festival.name %>
+</p>
+
+<p>
+  <strong>Edition:</strong>
+  <%= @festival.edition %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @festival.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @festival.end_date %>
+</p>
+
+<%= link_to 'Edit', edit_festival_path(@festival) %> |
+<%= link_to 'List festivals', festivals_path %> |
+<%= link_to 'Home Page', root_path %>
+
+<h2>Available tickets: <%= @tickets_sold %></h2>
+
+<% if @tickets.count > 0 %>
+  <%= form_tag increase_prices_festival_url(@festival) do %>
+    <%= submit_tag "Increase discounted tickets' prices by 10% and normal ones by 20%", class: "button" %>
+  <% end %>
+<% end %>
+
+<% if @tickets_sold > 0 %>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Valid from</th>
+        <th>Valid to</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tickets.each do |ticket| %>
+        <tr>
+          <td><%= ticket.id %></td>
+          <td><%= ticket.price %></td>
+          <td><%= ticket.category %></td>
+          <td><%= ticket.valid_from %></td>
+          <td><%= ticket.valid_to %></td>
+          <td><%= link_to 'Show', ticket %></td>
+          <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+          <td><%= link_to 'Delete', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<% if @concerts.count > 0 %>
+  <h2>Concerts</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @concerts.each do |concert| %>
+        <tr>
+          <td><%= concert.id %></td>
+          <td><%= concert.name %></td>
+          <td><%= concert.date %></td>
+          <td><%= link_to 'Show', concert %></td>
+          <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
+          <td><%= link_to 'Delete', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+

@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Locations</h1>
+
+<%= form_tag locations_path, method: :get do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag 'Search', class: "button" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Id', locations_path(order: 'id') %></th>
+      <th><%= link_to 'Name', locations_path(order: 'name') %></th>
+      <th><%= link_to 'Address', locations_path(order: 'address') %></th>
+      <th><%= link_to 'Opened at', locations_path(order: 'opened_at') %></th>
+      <th><%= link_to 'Closed at', locations_path(order: 'closed_at') %></th>
+      <th><%= link_to 'Capacity', locations_path(order: 'capacity') %></th>
+      <th><%= link_to 'Phone number', locations_path(order: 'phone_number') %></th>
+      <th><%= link_to 'Website', locations_path(order: 'website') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td><%= location.id %></td>
+        <td><%= location.name %></td>
+        <td><%= location.address %></td>
+        <td><%= location.opened_at %></td>
+        <td><%= location.closed_at %></td>
+        <td><%= location.capacity %></td>
+        <td><%= location.phone_number %></td>
+        <td><%= location.website %></td>
+        <td><%= link_to 'Show', location %></td>
+        <td><%= link_to 'Edit', edit_location_path(location) %></td>
+        <td><%= link_to 'Delete', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add new location', new_location_path %>
+<%= link_to 'Home Page', root_url %>

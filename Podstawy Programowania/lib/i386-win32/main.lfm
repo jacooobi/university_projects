@@ -1,0 +1,268 @@
+object MainForm: TMainForm
+  Left = 787
+  Height = 693
+  Top = 181
+  Width = 646
+  ClientHeight = 693
+  ClientWidth = 646
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.2.4.0'
+  object StringGrid: TStringGrid
+    Left = 8
+    Height = 616
+    Top = 72
+    Width = 632
+    ColCount = 7
+    DefaultColWidth = 100
+    RowCount = 51
+    ScrollBars = ssAutoHorizontal
+    TabOrder = 0
+    ColWidths = (
+      26
+      102
+      96
+      101
+      90
+      110
+      100
+    )
+    Cells = (
+      56
+      0
+      1
+      '1'
+      0
+      2
+      '2'
+      0
+      3
+      '3'
+      0
+      4
+      '4'
+      0
+      5
+      '5'
+      0
+      6
+      '6'
+      0
+      7
+      '7'
+      0
+      8
+      '8'
+      0
+      9
+      '9'
+      0
+      10
+      '10'
+      0
+      11
+      '11'
+      0
+      12
+      '12'
+      0
+      13
+      '13'
+      0
+      14
+      '14'
+      0
+      15
+      '15'
+      0
+      16
+      '16'
+      0
+      17
+      '17'
+      0
+      18
+      '18'
+      0
+      19
+      '19'
+      0
+      20
+      '20'
+      0
+      21
+      '21'
+      0
+      22
+      '22'
+      0
+      23
+      '23'
+      0
+      24
+      '24'
+      0
+      25
+      '25'
+      0
+      26
+      '26'
+      0
+      27
+      '27'
+      0
+      28
+      '28'
+      0
+      29
+      '29'
+      0
+      30
+      '30'
+      0
+      31
+      '31'
+      0
+      32
+      '32'
+      0
+      33
+      '33'
+      0
+      34
+      '34'
+      0
+      35
+      '35'
+      0
+      36
+      '36'
+      0
+      37
+      '37'
+      0
+      38
+      '38'
+      0
+      39
+      '39'
+      0
+      40
+      '40'
+      0
+      41
+      '41'
+      0
+      42
+      '42'
+      0
+      43
+      '43'
+      0
+      44
+      '44'
+      0
+      45
+      '45'
+      0
+      46
+      '46'
+      0
+      47
+      '47'
+      0
+      48
+      '48'
+      0
+      49
+      '49'
+      0
+      50
+      '50'
+      1
+      0
+      'Nazwa zespolu'
+      2
+      0
+      'Data koncertu'
+      3
+      0
+      'Miejscowosc'
+      4
+      0
+      'Cena biletu'
+      5
+      0
+      'Sprzedane bilety'
+      6
+      0
+      'Koszt imprezy'
+    )
+  end
+  object SortButton: TButton
+    Left = 288
+    Height = 24
+    Top = 41
+    Width = 112
+    Caption = 'Sortuj'
+    OnClick = SortButtonClick
+    TabOrder = 1
+  end
+  object AddButton: TButton
+    Left = 161
+    Height = 24
+    Top = 9
+    Width = 113
+    Caption = 'Dodaj'
+    OnClick = AddButtonClick
+    TabOrder = 2
+  end
+  object EditButton: TButton
+    Left = 161
+    Height = 24
+    Top = 41
+    Width = 112
+    Caption = 'Edytuj'
+    OnClick = EditButtonClick
+    TabOrder = 3
+  end
+  object DeleteButton: TButton
+    Left = 288
+    Height = 24
+    Top = 9
+    Width = 112
+    Caption = 'Usun'
+    OnClick = DeleteButtonClick
+    TabOrder = 4
+  end
+  object FileSaveButton: TButton
+    Left = 16
+    Height = 24
+    Top = 9
+    Width = 128
+    Caption = 'Zapis do pliku'
+    OnClick = FileSaveButtonClick
+    TabOrder = 5
+  end
+  object FileReadButton: TButton
+    Left = 16
+    Height = 24
+    Top = 41
+    Width = 128
+    Caption = 'Odczyt z pliku'
+    OnClick = FileReadButtonClick
+    TabOrder = 6
+  end
+  object SearchButton: TMyColorButton
+    Left = 464
+    Height = 39
+    Top = 16
+    Width = 120
+    BevelInner = bvRaised
+    Caption = 'Szukaj'
+    Color = 5226277
+    ParentColor = False
+    TabOrder = 7
+    OnClick = SearchButtonClick
+  end
+end

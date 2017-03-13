@@ -1,0 +1,81 @@
+#!/usr/bin/env ruby
+
+require 'benchmark'
+require 'colorize'
+
+require_relative 'lib/shared'
+require_relative 'lib/counting_sort'
+require_relative 'lib/merge_sort'
+require_relative 'lib/quick_sort'
+require_relative 'lib/shell_sort'
+require_relative 'lib/selection_sort'
+
+# Benchmark settings
+
+algorithms = ['merge_sort', 'counting_sort_asc', 'counting_sort_desc', 'shell_sort', 'quick_sort', 'selection_sort']
+samples = [25_000, 50_000, 75_000, 100_000, 125_000]
+
+round_result = 2
+max_value = 1_000_000
+
+# Write-to functions
+
+def write_to_file(path, results)
+  output = File.open(path, "w")
+  
+  results.each do |name, result|
+    output.puts "----- #{name} -----"
+    output.puts "Sorted:      " + result[:sorted].to_s
+    output.puts "Reversed:    " + result[:reversed].to_s
+    output.puts "Random:      " + result[:random].to_s
+    output.puts ""
+  end
+
+  output.close
+end
+
+def print_results(results)
+  results.each do |name, result|
+    puts "----- #{name} -----".red
+    puts "Sorted:   " + result[:sorted].to_s
+    puts "Reversed: " + result[:reversed].to_s
+    puts "Random:   " + result[:random].to_s
+    puts ""
+  end
+end
+
+# Running tests
+
+sorting = {}
+algorithms.each do |a|
+  h = {
+    sorted: [],
+    reversed: [],
+    random: []
+  }
+  sorting.merge!({a => h})
+end
+
+samples.each do |s|
+
+  sorted_array = rand_array(max_value, s).sort!
+  reversed_array = rand_array(max_value, s).sort!.reverse
+  random_array = rand_array(max_value, s)
+
+  tests = {
+    sorted: sorted_array,
+    reversed: reversed_array,
+    random: random_array
+  }
+
+  sorting.each do |method, results|
+    results[:sorted] << ((Benchmark.realtime { send(method, *[tests[:sorted]]) }) * 1000).round(round_result)
+    results[:reversed] << ((Benchmark.realtime { send(method, *[tests[:reversed]]) }) * 1000).round(round_result)
+    results[:random] << ((Benchmark.realtime { send(method, *[tests[:random]]) }) * 1000).round(round_result)
+  end
+end
+
+# Writing
+
+print_results(sorting)
+write_to_file("./tests_output.txt", sorting)

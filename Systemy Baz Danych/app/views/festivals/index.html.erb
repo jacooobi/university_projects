@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Festivals</h1>
+
+<%= form_tag festivals_path, method: :get do %>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag 'Search', class: "button" %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Id', festivals_path(order: 'id') %></th>
+      <th><%= link_to 'Name', festivals_path(order: 'name') %></th>
+      <th><%= link_to 'Edition', festivals_path(order: 'edition') %></th>
+      <th><%= link_to 'Start date', festivals_path(order: 'start_date') %></th>
+      <th><%= link_to 'End date', festivals_path(order: 'end_date') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @festivals.each do |festival| %>
+      <tr>
+        <td><%= festival.id %></td>
+        <td><%= festival.name %></td>
+        <td><%= festival.edition %></td>
+        <td><%= festival.start_date %></td>
+        <td><%= festival.end_date %></td>
+        <td><%= link_to 'Show', festival %></td>
+        <td><%= link_to 'Edit', edit_festival_path(festival) %></td>
+        <td><%= link_to 'Delete', festival, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add new festival', new_festival_path %>
+<%= link_to 'Home Page', root_url %>
